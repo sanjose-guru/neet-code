@@ -8,14 +8,14 @@ class Solution:
         res = collections.defaultdict(list) # mapping charCount to list of anagrams
 
         for s in strs:
-            count = [0] * 26 # a...z. This list will be used a key in res dict
+            # a...z. This list will be used as the key in res dict
+            count = [0] * 26
 
-            # the char count list will be the key in res dict, 
-            # All strings with same char count will grouped in res
+            # calculate char count for the string
             for c in s:
                 count[ord(c) - ord('a')] += 1
 
-            # All strings with same char count will grouped under same key
+            # All strings with same char-count as key will be grouped together
             res[tuple(count)].append(s)
 
         return list(res.values())
