@@ -21,26 +21,26 @@ class Solution:
 
             while stk and stk[-1][1] > h:
                 pi, ph = stk.pop()
-                print(f"popped: {pi, ph}")
+                #print(f"popped: {pi, ph}")
                 a =  (i - pi) * ph
                 if a > maxA:
                     maxA = a
-                    print(f"updated maxA: {maxA}")
+                    #print(f"updated maxA: {maxA}")
                 lpi = pi
 
-            print(f"adding: {lpi, h}")
+            #print(f"adding: {lpi, h}")
             stk.append([lpi, h])
             
         # empty the stack
-        print("emptying stack")
+        #print("emptying stack")
         while stk:
             pi, ph = stk.pop()
-            print(f"popped: {pi, ph}")
+            #print(f"popped: {pi, ph}")
             a = (len(heights) - pi) * ph
             if a > maxA:
                 maxA = a
-                print(f"updated maxA: {maxA}")
-        print(f"final maxA: {maxA}")
+                #print(f"updated maxA: {maxA}")
+        #print(f"final maxA: {maxA}")
         return maxA
 
 
